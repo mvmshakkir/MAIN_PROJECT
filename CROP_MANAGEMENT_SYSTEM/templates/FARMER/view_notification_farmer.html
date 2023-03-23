@@ -13,11 +13,13 @@
       <td>description</td>
       <td>date</td>
     </tr>
+    {% for i in val %}
     <tr>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
+      <td>{{i.name}}</td>
+      <td>{{i.description}}</td>
+      <td>{{i.date}}</td>
     </tr>
+    {% endfor %}
   </table>
 </form>
 <p>&nbsp;</p>

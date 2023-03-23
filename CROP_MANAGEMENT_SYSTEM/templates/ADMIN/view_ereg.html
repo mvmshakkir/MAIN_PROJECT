@@ -6,26 +6,25 @@
 </head>
 
 <body>
-<form id="form1" name="form1" method="post" action="">
+<form id="form1" name="form1" method="post" action="exp_reg">
   <table width="458" border="1">
     <tr>
       <td width="51">name</td>
       <td width="47">address</td>
       <td width="80">phone</td>
       <td width="80">email</td>
-      <td width="80">qualification</td>
-      <td width="80">&nbsp;</td>
     </tr>
+    {% for i in val %}
     
     <tr>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-      <td><p><a href="#">edit</a></p>
-      <p><a href="#">delete</a></p></td>
+      <td>{{i.fname}} {{i.lname}}</td>
+      <td>{{i.place}} {{i.post}} {{i.pin}}</td>
+      <td>{{i.phone}}</td>
+      <td>{{i.email}}</td>
+      <td><p><a href="{% url 'editexp' id=i.id %}">edit</a></p>
+      <p><a href="{% url 'delexpert' id=i.lid.id %}">delete</a></p></td>
     </tr>
+    {% endfor %}
     <tr>
       <td colspan="6"><p><a href="#"></a>
         <label>

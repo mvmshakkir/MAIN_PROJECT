@@ -36,6 +36,29 @@ urlpatterns=[
     path('exp',views.exp,name="exp"),
     path('notification1',views.notification1,name="notification1"),
     path('policy1',views.policy1,name="policy1"),
+    path('dis',views.dis,name="dis"),
+    path('fer',views.fer,name="fer"),
+    path('tip1',views.tip1,name="tip1"),
+    path('editexp/<int:id>',views.editexp,name="editexp"),
+    path('edexp',views.edexp,name="edexp"),
+    path('delexpert/<int:id>',views.delexpert,name="delexpert"),
+    path('editpol/<int:id>',views.editpol,name="editpol"),
+    path('edpolicy',views.edpolicy,name="edpolicy"),
+    path('delpolicy/<int:id>',views.delpolicy,name="delpolicy"),
+    path('editnot/<int:id>',views.editnot,name="editnot"),
+    path('ednot',views.ednot,name="ednot"),
+    path('delnot/<int:id>',views.delnot,name="delnot"),
+    path('editdis/<int:id>',views.editdis,name="editdis"),
+    path('eddis',views.eddis,name="eddis"),
+    path('deldis/<int:id>',views.deldis,name="deldis"),
+    path('editfer/<int:id>',views.editfer,name="editfer"),
+    path('edfer',views.edfer,name="edfer"),
+    path('delfer/<int:id>',views.delfer,name="delfer"),
+
+
+
+
+
 
 
          

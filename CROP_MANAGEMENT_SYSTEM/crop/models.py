@@ -46,6 +46,7 @@ class notification(models.Model):
     date=models.DateField(max_length=150)  
 
 class tips(models.Model):
+    eid=models.ForeignKey(expert,on_delete=models.CASCADE)
     name=models.CharField(max_length=100)
     description=models.CharField(max_length=100)  
 

@@ -6,7 +6,7 @@
 </head>
 
 <body>
-<form id="form1" name="form1" method="post" action="">
+<form id="form1" name="form1" method="post" action="notifi">
   <table width="200" border="1">
     <tr>
       <td>name</td>
@@ -14,14 +14,16 @@
       <td>date</td>
       <td>&nbsp;</td>
     </tr>
+    {% for i in val %}
     <tr>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-      <td><p><a href="#">edit</a></p>
+      <td>{{i.name}}</td>
+      <td>{{i.description}}</td>
+      <td>{{i.date}}</td>
+      <td><p><a href="{% url 'editnot' id=i.id %}">edit</a></p>
       <p>&nbsp;</p>
-      <p><a href="#">delete</a></p></td>
+      <p><a href="{% url 'delnot' id=i.id %}">delete</a></p></td>
     </tr>
+    {% endfor %}
     <tr>
       <td colspan="4"><label>
         <div align="center">
