@@ -54,6 +54,9 @@ urlpatterns=[
     path('editfer/<int:id>',views.editfer,name="editfer"),
     path('edfer',views.edfer,name="edfer"),
     path('delfer/<int:id>',views.delfer,name="delfer"),
+    path('edittip/<int:id>',views.edittip,name="edittip"),
+    path('edtip',views.edtip,name="edtip"),
+    path('deltip/<int:id>',views.deltip,name="deltip"),
 
 
 

@@ -6,7 +6,7 @@ from datetime import datetime
 # Create your views here.
 
 def main(request):
-    return render(request,"login.html")
+    return render(request,"index.html")
 
 def dataset(request):
     return render(request,"ADMIN/dataset.html")
@@ -48,7 +48,7 @@ def vuser(request):
     return render(request,"ADMIN/view_user.html",{'val':ob})
 
 def mainhome(request):
-    return render(request,"ADMIN/home.html")    
+    return render(request,"index1.html")    
 
 
 
@@ -85,7 +85,7 @@ def ehome(request):
 
 
 def reg(request):
-    return render(request,"FARMER/registration.html")
+    return render(request,"index3.html")
 
 def vds(request):
     ob=disease.objects.all()
@@ -134,7 +134,6 @@ def farmreg(request):
     fob.email=email
     fob.lid=ob
     fob.save()
-
     return HttpResponse('''<script>alert("Registration Successfull");window.location='/'</script> ''')
 
 
@@ -181,7 +180,7 @@ def exp(request):
     obb.phone=phone
     obb.lid=ob
     obb.save()
-    return HttpResponse('''<script>alert("Registration Successfull");window.location='/'</script> ''')
+    return HttpResponse('''<script>alert("Registration Successfull");window.location='/vreg'</script> ''')
 
 def notification1(request):
     name=request.POST['textfield']
@@ -192,7 +191,7 @@ def notification1(request):
     ob.description=description   
     ob.date=datetime.today()
     ob.save()
-    return HttpResponse('''<script>alert("Notification Added");window.location='/'</script> ''')
+    return HttpResponse('''<script>alert("Notification Added");window.location='/vnotifi'</script> ''')
 
 
 def policy1(request):
@@ -204,7 +203,7 @@ def policy1(request):
     ob.description=description
     ob.date=datetime.today()
     ob.save()
-    return HttpResponse('''<script>alert("Policy Added");window.location='/'</script> ''')
+    return HttpResponse('''<script>alert("Policy Added");window.location='/vpolici'</script> ''')
 
 
 
@@ -220,7 +219,7 @@ def dis(request):
     obb.date=datetime.today()
     obb.eid=expert.objects.get(lid__id=request.session['lid'])
     obb.save()
-    return HttpResponse('''<script>alert("Disease Added");window.location='/'</script> ''')
+    return HttpResponse('''<script>alert("Disease Added");window.location='/vdis'</script> ''')
 
 
 def fer(request):
@@ -233,7 +232,7 @@ def fer(request):
     ob.description=description
     ob.eid=expert.objects.get(lid__id=request.session['lid'])
     ob.save()
-    return HttpResponse('''<script>alert("Fertilizer Added");window.location='/'</script> ''')
+    return HttpResponse('''<script>alert("Fertilizer Added");window.location='/vfert'</script> ''')
 
 
 def tip1(request):
@@ -246,7 +245,7 @@ def tip1(request):
     ob.description=description
     ob.eid=expert.objects.get(lid__id=request.session['lid'])
     ob.save()
-    return HttpResponse('''<script>alert("Tip Added");window.location='/'</script> ''')
+    return HttpResponse('''<script>alert("Tip Added");window.location='/vtp'</script> ''')
 
 
 def editexp(request,id):
@@ -273,14 +272,14 @@ def edexp(request):
     obb.email=email
     obb.phone=phone
     obb.save()
-    return HttpResponse('''<script>alert("Updated");window.location='/'</script> ''') 
+    return HttpResponse('''<script>alert("Updated");window.location='/vreg'</script> ''') 
 
 def delexpert(request,id):
     ob=expert.objects.get(lid__id=id)
     ob.delete()
     iob=login.objects.get(id=id)
     iob.delete()
-    return HttpResponse('''<script>alert("Deleted");window.location='/'</script> ''') 
+    return HttpResponse('''<script>alert("Deleted");window.location='/vreg'</script> ''') 
 
 
 def editpol(request,id):
@@ -294,14 +293,14 @@ def edpolicy(request):
     obb=policies.objects.get(id=request.session['eid'])
     obb.name=name
     obb.description=description
-    obb.date=date
+    obb.date=datetime.today()
     obb.save()
-    return HttpResponse('''<script>alert("Updated");window.location='/'</script> ''') 
+    return HttpResponse('''<script>alert("Updated");window.location='/vpolici'</script> ''') 
 
 def delpolicy(request,id):
     ob=policies.objects.get(id=id)
     ob.delete()
-    return HttpResponse('''<script>alert("Deleted");window.location='/'</script> ''') 
+    return HttpResponse('''<script>alert("Deleted");window.location='/vpolici'</script> ''') 
 
 def editnot(request,id):
     request.session['eid']=id
@@ -316,12 +315,12 @@ def ednot(request):
     obb.description=description
     obb.date=datetime.today()
     obb.save()
-    return HttpResponse('''<script>alert("Updated");window.location='/'</script> ''')    
+    return HttpResponse('''<script>alert("Updated");window.location='/vnotifi#about'</script> ''')    
 
 def delnot(request,id):
     ob=notification.objects.get(id=id)
     ob.delete()
-    return HttpResponse('''<script>alert("Deleted");window.location='/'</script> ''') 
+    return HttpResponse('''<script>alert("Deleted");window.location='/vnotifi#about'</script> ''') 
 
 def editdis(request,id):
     request.session['eid']=id
@@ -336,13 +335,13 @@ def eddis(request):
     obb.description=description
     obb.date=datetime.today()
     obb.save()
-    return HttpResponse('''<script>alert("Updated");window.location='/'</script> ''')
+    return HttpResponse('''<script>alert("Updated");window.location='/vdis'</script> ''')
 
 
 def deldis(request,id):
     ob=disease.objects.get(id=id)
     ob.delete()
-    return HttpResponse('''<script>alert("Deleted");window.location='/'</script> ''')
+    return HttpResponse('''<script>alert("Deleted");window.location='/vdis'</script> ''')
 
 def editfer(request,id):
     request.session['eid']=id
@@ -356,18 +355,33 @@ def edfer(request):
     obb.name=name
     obb.description=description
     obb.save()
-    return HttpResponse('''<script>alert("Updated");window.location='/'</script> ''')
+    return HttpResponse('''<script>alert("Updated");window.location='/vfert'</script> ''')
 
 def delfer(request,id):
     ob=fertilizer.objects.get(id=id)
     ob.delete()
-    return HttpResponse('''<script>alert("Deleted");window.location='/'</script> ''') 
+    return HttpResponse('''<script>alert("Deleted");window.location='/vfert'</script> ''') 
 
 
+def edittip(request,id):
+    request.session['eid']=id
+    ob=tips.objects.get(id=id)
+    return render(request,"EXPERT/edittip.html",{'val':ob})
+
+def edtip(request):
+    name=request.POST['textfield']
+    description=request.POST['textarea']
+    obbb=tips.objects.get(id=request.session['eid'])
+    obbb.name=name
+    obbb.description=description
+    obbb.save()
+    return HttpResponse('''<script>alert("Updated");window.location='/vtp'</script> ''')
 
 
-
-
+def deltip(request,id):
+    ob=tips.objects.get(id=id)
+    ob.delete()
+    return HttpResponse('''<script>alert("Deleted");window.location='/vtp'</script> ''')
 
 
         

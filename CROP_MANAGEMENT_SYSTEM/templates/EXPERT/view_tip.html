@@ -17,8 +17,8 @@
     <tr>
       <td>{{i.name}}</td>
       <td>{{i.description}}</td>
-      <td><p><a href="#">edit</a></p>
-      <p><a href="#">delete</a></p></td>
+      <td><p><a href="{% url 'edittip' id=i.id %}">edit</a></p>
+      <p><a href="{% url 'deltip' id=i.id %}">delete</a></p></td>
     </tr>
     {% endfor %}
     <tr>
