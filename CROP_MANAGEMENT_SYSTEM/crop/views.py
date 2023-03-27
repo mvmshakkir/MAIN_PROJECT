@@ -78,7 +78,7 @@ def vtp(request):
     return render(request,"EXPERT/view_tip.html",{'val':ob})
 
 def ehome(request):
-    return render(request,"EXPERT/expert_home.html")      
+    return render(request,"expertindex.html")      
 
 
 
@@ -104,7 +104,7 @@ def vtip(request):
     return render(request,"FARMER/view_tip_farmer.html",{'val':ob})  
 
 def fhome(request):
-    return render(request,"FARMER/farmerhome.html")
+    return render(request,"farmerindex.html")
 
 def farmreg(request):
     fname=request.POST['textfield']
