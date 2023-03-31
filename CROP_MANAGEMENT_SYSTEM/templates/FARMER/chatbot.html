@@ -4,62 +4,68 @@
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 <title>Untitled Document</title>
 </head> -->
-{% extends 'index1.html' %}
+{% extends 'farmerindex.html' %}
 {% block body %}
 <body>
-<form id="form1" name="form1" method="post" action="{% url 'edexp' %}">
+<form id="form1" name="form1" method="post" action="chatbot">
   <table width="200" border="1" class="table">
     <tr>
-      <td>first_name</td>
+      <td>N</td>
       <td><label>
-        <input type="text" name="textfield"   value="{{val.fname}}"/>
+        <input type="text" name="textfield" />
       </label></td>
     </tr>
     <tr>
-      <td>last_name</td>
+      <td>P</td>
       <td><label>
-        <input type="text" name="textfield2" value="{{val.lname}}" />
+        <input type="text" name="textfield2" />
       </label></td>
     </tr>
     <tr>
-      <td>place</td>
+      <td>K</td>
       <td><label>
-        <input type="text" name="textfield3" value="{{val.place}}"/>
+        <input type="text" name="textfield3" />
       </label></td>
     </tr>
     <tr>
-      <td>post</td>
+      <td>Temperature</td>
       <td><label>
-        <input type="text" name="textfield4" value="{{val.post}}" />
+        <input type="text" name="textfield4" />
       </label></td>
     </tr>
     <tr>
-      <td>pin</td>
+      <td>Humidity</td>
       <td><label>
-        <input type="text" name="textfield5" value="{{val.pin}}" />
+        <input type="text" name="textfield5" />
       </label></td>
     </tr>
     <tr>
-      <td>phone</td>
+      <td>Ph</td>
       <td><label>
-        <input type="text" name="textfield7" value="{{val.phone}}" />
+        <input type="text" name="textfield6" />
       </label></td>
     </tr>
     <tr>
-      <td>email</td>
+      <td>Ranfall</td>
       <td><label>
-        <input type="text" name="textfield8" value="{{val.email}}"/>
+        <input type="text" name="textfield7" />
+      </label></td>
+    </tr>
+    <tr>
+      <td>Label</td>
+      <td><label>
+        <input type="text" name="textfield8" />
       </label></td>
     </tr>
     <tr>
       <td colspan="2"><label>
         <div align="center">
-          <input type="submit" name="Submit" value="UPDATE" />
+          <input type="submit" name="Submit" value="Predict" />
           </div>
       </label></td>
     </tr>
   </table>
 </form>
 </body>
-<!-- </html> -->
 {% endblock %}
+<!-- </html> -->

@@ -7,18 +7,18 @@
 {% extends 'expertindex.html' %}
 {% block body %}
 <body>
-<form id="form1" name="form1" method="post" action="dis">
-  <table width="200" border="1">
+<form id="form1" name="form1" method="post" action="dis#about">
+  <table width="200" border="1" class="table">
     <tr>
       <td>disease_name</td>
       <td><label>
-        <input type="text" name="textfield" />
+        <input type="text" name="textfield" required />
       </label></td>
     </tr>
     <tr>
       <td>description</td>
       <td><label>
-        <textarea name="textarea"></textarea>
+        <textarea name="textarea" required></textarea>
       </label></td>
     </tr>
     <tr>

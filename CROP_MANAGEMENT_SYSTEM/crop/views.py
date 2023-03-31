@@ -140,18 +140,21 @@ def farmreg(request):
 def logn(request):
     username=request.POST['textfield']
     password=request.POST['textfield2']
-    ob=login.objects.get(username=username,password=password)
-    if ob.type=='admin':
-        return redirect('/mainhome')
-    elif ob.type=='expert':
-        request.session['lid']=ob.id
-        return redirect('/ehome')
-    elif ob.type=='farmer':
-        request.session['lid']=ob.id
+    try:
+        ob=login.objects.get(username=username,password=password)
+        if ob.type=='admin':
+            return redirect('/mainhome')
+        elif ob.type=='expert':
+            request.session['lid']=ob.id
+            return redirect('/ehome')
+        elif ob.type=='farmer':
+            request.session['lid']=ob.id
 
-        return redirect('/fhome')
-    else:
-        return HttpResponse('''<script>alert("Invalid");window.location='/'</script> ''')
+            return redirect('/fhome')
+        else:
+            return HttpResponse('''<script>alert("Invalid user name or password");window.location='/'</script> ''')
+    except:
+        return HttpResponse('''<script>alert("Invalid user name or password");window.location='/'</script> ''')
 
 def exp(request):
     fname=request.POST['textfield']
@@ -203,7 +206,7 @@ def policy1(request):
     ob.description=description
     ob.date=datetime.today()
     ob.save()
-    return HttpResponse('''<script>alert("Policy Added");window.location='/vpolici'</script> ''')
+    return HttpResponse('''<script>alert("Scheme Added");window.location='/vpolici'</script> ''')
 
 
 
@@ -382,11 +385,23 @@ def deltip(request,id):
     ob=tips.objects.get(id=id)
     ob.delete()
     return HttpResponse('''<script>alert("Deleted");window.location='/vtp'</script> ''')
+def viewchatbot(request):
+    return render(request,"FARMER/chatbot.html")
 
+def chatbot(request):
+    n=request.POST['textfield']
+    p=request.POST['textfield2']
+    K=request.POST['textfield3']
+    temperature=request.POST['textfield4']
+    humidity=request.POST['textfield5']
+    ph=request.POST['textfield6']
+    rainfall=request.POST['textfield7']
+    label=request.POST['textfield8']
 
-        
+    return render(request,"FARMER/chatbot.html")      
 
-
+def viewrslt(request):
+    return render(request,"FARMER/viewresult.html")
 
 
 

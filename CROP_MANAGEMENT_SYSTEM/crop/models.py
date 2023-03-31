@@ -32,27 +32,27 @@ class expert(models.Model):
 class disease(models.Model):
     eid=models.ForeignKey(expert,on_delete=models.CASCADE)
     disease_name=models.CharField(max_length=100)
-    description=models.CharField(max_length=100)
+    description=models.TextField()
     date=models.DateField(max_length=150)
 
 class fertilizer(models.Model):
     eid=models.ForeignKey(expert,on_delete=models.CASCADE)
     name=models.CharField(max_length=100)
-    description=models.CharField(max_length=100)
+    description=models.TextField()
 
 class notification(models.Model):
     name=models.CharField(max_length=100)
-    description=models.CharField(max_length=100)
+    description=models.TextField()
     date=models.DateField(max_length=150)  
 
 class tips(models.Model):
     eid=models.ForeignKey(expert,on_delete=models.CASCADE)
-    name=models.CharField(max_length=100)
-    description=models.CharField(max_length=100)  
+    name=models.TextField()
+    description=models.TextField()  
 
 class policies(models.Model):
     name=models.CharField(max_length=100)
-    description=models.CharField(max_length=100)
+    description=models.TextField()
     date=models.DateField(max_length=150)  
 
 class datasets(models.Model):

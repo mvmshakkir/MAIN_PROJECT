@@ -57,6 +57,8 @@ urlpatterns=[
     path('edittip/<int:id>',views.edittip,name="edittip"),
     path('edtip',views.edtip,name="edtip"),
     path('deltip/<int:id>',views.deltip,name="deltip"),
+    path('chatbot',views.chatbot,name="chatbot"),
+    path('viewchatbot',views.viewchatbot,name="viewchatbot"),
 
 
 

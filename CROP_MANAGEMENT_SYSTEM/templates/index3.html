@@ -37,25 +37,25 @@
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">first name</label>
-                                    <input class="input--style-4" type="text" name="textfield">
+                                    <input class="input--style-4" type="text" name="textfield" required pattern="[A-Z a-z.]{3,25}">
                                 </div>
                             </div>
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">last name</label>
-                                    <input class="input--style-4" type="text" name="textfield2">
+                                    <input class="input--style-4" type="text" name="textfield2" required pattern="[A-Z a-z.]{3,25}">
                                 </div>
                             </div>
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">pin</label>
-                                    <input class="input--style-4" type="text" name="textfield6">
+                                    <input class="input--style-4" type="text" name="textfield6" required pattern="[6]{6}">
                                 </div>
                             </div>
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">post</label>
-                                    <input class="input--style-4" type="text" name="textfield5">
+                                    <input class="input--style-4" type="text" name="textfield5" required pattern="[A-Z a-z.]{3,25}">
                                 </div>
                             </div>
                         </div>
@@ -89,25 +89,25 @@
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">Email</label>
-                                    <input class="input--style-4" type="email" name="textfield8">
+                                    <input class="input--style-4" type="email" name="textfield8" required="">
                                 </div>
                             </div>
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">place</label>
-                                    <input class="input--style-4" type="text" name="textfield4">
+                                    <input class="input--style-4" type="text" name="textfield4" required pattern="[A-Z a-z.]{3,25}">
                                 </div>
                             </div>
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">user name</label>
-                                    <input class="input--style-4" type="text" name="un" required="">
+                                    <input class="input--style-4" type="text" name="un" required="" >
                                 </div>
                             </div>
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">password</label>
-                                    <input class="input--style-4" type="text" name="ps" required="">
+                                    <input class="input--style-4" type="text" name="ps" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
                                 </div>
                             </div>
                         </div>
