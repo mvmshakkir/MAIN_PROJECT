@@ -59,6 +59,7 @@ urlpatterns=[
     path('deltip/<int:id>',views.deltip,name="deltip"),
     path('chatbot',views.chatbot,name="chatbot"),
     path('viewchatbot',views.viewchatbot,name="viewchatbot"),
+    path('logout',views.logout,name="logout"),
 
 
 
